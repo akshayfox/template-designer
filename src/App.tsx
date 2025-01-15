@@ -6,14 +6,12 @@ import PropertyPanel from "./components/PropertyPanel";
 import {
   Menu,
   Search,
-  Download,
   Share2,
   Undo,
   Redo,
-  Plus,
   ChevronDown,
   Home,
-  X,
+  Settings,
 } from "lucide-react";
 import ZoomableCanvas from "./components/ZoomableCanvas ";
 
@@ -134,11 +132,24 @@ const App = () => {
 
         <div className={`
           absolute right-0 md:relative w-[300px] bg-white border-l border-gray-200 
-          h-full z-40 transition-transform duration-300
+          flex flex-col h-full z-40 transition-transform duration-300
           ${isPropertyPanelOpen ? 'translate-x-0' : 'translate-x-full'}
           md:translate-x-0
         `}>
-          <PropertyPanel />
+          <div className="p-4 border-b border-gray-200">
+            <div className="flex items-center justify-between">
+              <span className="font-semibold text-gray-700">Properties</span>
+              <button 
+                onClick={() => setIsPropertyPanelOpen(false)}
+                className="p-1 hover:bg-gray-100 rounded-lg md:hidden"
+              >
+                <Settings className="w-5 h-5 text-gray-600" />
+              </button>
+            </div>
+          </div>
+          <div className="flex-1 overflow-y-auto">
+            <PropertyPanel />
+          </div>
         </div>
 
         {(isSidebarOpen || isPropertyPanelOpen) && (
