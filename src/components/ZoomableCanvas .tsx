@@ -150,14 +150,14 @@ const ZoomableCanvas: React.FC<ZoomableCanvasProps> = ({ children }) => {
       </div>
       <div
         ref={containerRef}
-        className="flex-1 overflow-hidden bg-gray-100 relative  flex items-center justify-center"
+        className="flex-1  bg-gray-100 relative  flex items-center justify-center"
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseUp}
       >
         <div
-          className="absolute transition-transform duration-150 ease-out"
+          className=" transition-transform duration-150 ease-out"
           style={{
             transform: `translate(${position.x}px, ${position.y}px) scale(${scale})`,
             transformOrigin: '0 0',

@@ -54,7 +54,7 @@ const Toolbar: React.FC = () => {
   };
 
   return (
-    <div className="bg-white p-4 shadow-lg rounded-lg h-full">
+    <div className="bg-white p-4 shadow-lg rounded-lg h-full ">
       <h3 className="font-semibold text-lg border-b pb-2 mb-4">Tools</h3>
       <div className="space-y-2">
         <button
