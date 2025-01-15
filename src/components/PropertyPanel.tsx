@@ -1,13 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useEditorStore } from "../store/editorStore";
 
 const PropertyPanel: React.FC = () => {
   const { selectedElement, updateElement } = useEditorStore();
-  console.log(selectedElement,'selectedElement')
-
-  // useEffect(() => {
-  //   console.log('selectedElement updated:', selectedElement);
-  // }, [selectedElement]);
 
   if (!selectedElement) {
     return (
@@ -20,7 +15,6 @@ const PropertyPanel: React.FC = () => {
   }
 
   const handleStyleChange = (property: string, value: string | number) => {
-    console.log('Updating style property:', property, 'with value:', value);
     updateElement(selectedElement.id, {
       style: {
         ...selectedElement.style,
@@ -30,14 +24,11 @@ const PropertyPanel: React.FC = () => {
   };
 
   const handleContentChange = (content: string) => {
-    console.log('Updating content:', content);
-    updateElement(selectedElement.id, { content:content });
+    updateElement(selectedElement.id, { content });
   };
 
   return (
-    <div
-      className="bg-white p-4 shadow-lg rounded-lg space-y-4"
-      style={{ height: `calc(100vh - 71.25px)` }}>
+    <div className="bg-white p-4 shadow-lg rounded-lg space-y-4 h-full">
       <h3 className="font-semibold text-lg border-b pb-2">Properties</h3>
 
       {selectedElement.type === "text" && (

@@ -46,7 +46,7 @@ const Canvas: React.FC = () => {
 
   return (
     <div 
-      className="relative bg-white shadow-lg rounded-lg overflow-hidden  mx-auto "
+      className="relative bg-white shadow-lg rounded-lg overflow-hidden  mx-auto flex items-center justify-center "
       style={{
         width: activeTemplate.canvasSize.width,
         height: activeTemplate.canvasSize.height,
