@@ -11,6 +11,7 @@ export interface Element {
     fontSize?: number;
     color?: string;
     backgroundColor?: string;
+    borderRadius?: number | string;
   };
 }
 
